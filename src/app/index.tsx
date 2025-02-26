@@ -1,10 +1,14 @@
-import { Button, StyleSheet,Text, View } from "react-native";
+import { Alert, Button, StyleSheet,Text, View } from "react-native";
 
 function Index() {
-    return( 
+    function handleSubmit(){
+        const name = "Guilherme";
+        Alert.alert(`Olá, ${name}`);
+    }
+    return(
         <View style={styles.container}>
             <Text style={styles.text}>Hello Word</Text>
-            <Button title="Enviar"/>
+            <Button title="Enviar" onPress={handleSubmit}/>
         </View>
     )
 }
