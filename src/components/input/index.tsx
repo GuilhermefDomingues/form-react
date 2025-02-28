@@ -1,8 +1,20 @@
-import { TextInput, TextInputProps } from "react-native";
+import { Text, TextInput, TextInputProps } from "react-native";
 import styles from "./styles";
+import React from "react";
 
-function Input({ ...rest }:TextInputProps) {
-    return( <TextInput style={styles.input} {...rest} />
-)}
+
+type Props = TextInputProps & {
+    label: String;
+};
+
+function Input({ label, ...rest }:Props) {
+    return(
+    <>
+        <Text style={styles.label}>{label}</Text>
+        <TextInput style={styles.input} {...rest} />
+    </>
+    );
+}
+
 
 export default Input;
